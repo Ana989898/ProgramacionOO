@@ -1,0 +1,1 @@
+Este programa en Python convierte temperaturas entre Celsius, Fahrenheit y Kelvin. Solicita al usuario el valor y las unidades de origen y destino, realiza la conversión con funciones específicas y muestra el resultado. Utiliza distintos tipos de datos como float, str y bool, y emplea identificadores claros en estilo snake_case.
