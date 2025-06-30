@@ -1,40 +1,36 @@
-2525---PROGRAMACION-ORIENTADA-A-OBJETOS-D----UEA-L-UFB-030
-Este repositorio contiene los trabajos y ejercicios desarrollados durante la asignatura Programación Orientada a Objetos, cursada en la Universidad Estatal Amazónica (UEA). Ha sido creado como parte del proceso formativo y está enfocado en reforzar los principios fundamentales de la programación con Python.
+# 📘 2525---PROGRAMACION-ORIENTADA-A-OBJETOS-D----UEA-L-UFB-030
 
-👨‍🎓 Información del estudiante
-Nombre: Ana María Villón Tomalá
+Este repositorio contiene los ejercicios, ejemplos y proyectos desarrollados durante la asignatura **Programación Orientada a Objetos**, utilizando el lenguaje de programación **Python**. Está orientado al aprendizaje práctico de los conceptos fundamentales de la POO en el contexto universitario.
 
-Carrera: Ingeniería en Tecnologías de la Información y Comunicación
+## 🎓 Información del estudiante
 
-Asignatura: Programación Orientada a Objetos (UEA-L-UFB-030)
+- **Nombre:** Ana María Villón Tomalá  
+- **Carrera:** Ingeniería en Tecnologías de la Información y Comunicación  
+- **Asignatura:** Programación Orientada a Objetos (UEA-L-UFB-030)  
+- **Universidad:** Universidad Estatal Amazónica (UEA)  
+- **Docente:** Ing. Walter Núñez Zamora, Mgs.  
+- **Periodo:** 2025
 
-Periodo académico: 2025
+## 🐍 Lenguaje y entorno
 
-Docente: Ing. Walter Núñez Zamora, Mgs.
+- **Lenguaje:** Python 3  
+- **Entorno de desarrollo:** PyCharm  
+- **Control de versiones:** Git y GitHub  
 
-📂 Contenido del repositorio
-Este repositorio incluye:
+## 📂 Contenido del repositorio
 
-📌 Ejercicios prácticos de aplicación de POO en Python.
+- Ejercicios de clases y objetos en Python.  
+- Ejemplos prácticos de herencia, encapsulamiento, polimorfismo y abstracción.  
+- Mini-proyectos aplicando los conceptos de POO a situaciones del mundo real.  
+- Códigos comentados para facilitar el aprendizaje.  
 
-🧩 Ejemplos comentados de clases, objetos, herencia, polimorfismo, encapsulamiento y abstracción.
+## 🎯 Objetivos de aprendizaje
 
-💻 Proyectos individuales desarrollados como parte de las actividades evaluativas.
+- Aplicar los principios fundamentales de la **Programación Orientada a Objetos (POO)**.
+- Desarrollar programas eficientes, reutilizables y bien estructurados en **Python**.
+- Modelar problemas reales mediante clases, atributos y métodos.
+- Demostrar la interacción entre objetos y técnicas de diseño modular.
 
-📝 Documentación con explicaciones y análisis de código.
+## ✅ Estado del proyecto
 
-🎯 Objetivos personales de aprendizaje
-Comprender y aplicar los conceptos clave de la programación orientada a objetos.
-
-Desarrollar programas estructurados, legibles y funcionales en Python.
-
-Simular situaciones del mundo real mediante modelado con clases y objetos.
-
-Documentar de forma clara el código desarrollado.
-
-🛠️ Tecnologías y herramientas
-Lenguaje: Python 3.12+
-
-Entorno de desarrollo: PyCharm Community Edition
-
-Control de versiones: Git y GitHub
+🚧 En desarrollo. Se agregan avances conforme se completan las actividades académicas.
