@@ -1,88 +1,67 @@
-# product.py
+# inventory.py
 # -*- coding: utf-8 -*-
 """
-Clase Producto: representa un artículo dentro del inventario.
+Clase Inventario: administra un conjunto de productos.
 """
 
-from typing import Any
+from typing import List, Optional
+from product import Producto
 
 
-class Producto:
-    """Representa un producto del inventario con ID, nombre, cantidad y precio."""
+class Inventario:
+    """Gestiona productos en memoria, permitiendo operaciones CRUD."""
 
-    def __init__(self, id_: str, nombre: str, cantidad: int, precio: float) -> None:
-        # Los atributos son privados para obligar al uso de getters y setters
-        self._id = None
-        self._nombre = None
-        self._cantidad = None
-        self._precio = None
+    def __init__(self) -> None:
+        # Lista → mantiene el orden de inserción
+        self._productos: List[Producto] = []
+        # Diccionario → acceso rápido por ID
+        self._index_by_id: dict[str, Producto] = {}
 
-        # Se asignan valores a través de los setters (validación incluida)
-        self.id = id_
-        self.nombre = nombre
-        self.cantidad = cantidad
-        self.precio = precio
+    # --- Crear ---
+    def anadir(self, producto: Producto) -> None:
+        """Añade un nuevo producto, validando que el ID sea único."""
+        if producto.id in self._index_by_id:
+            raise ValueError(f"Ya existe un producto con ID '{producto.id}'.")
+        self._productos.append(producto)
+        self._index_by_id[producto.id] = producto
 
-    # --- ID (único) ---
-    @property
-    def id(self) -> str:
-        return self._id
+    # --- Eliminar ---
+    def eliminar_por_id(self, id_: str) -> bool:
+        """Elimina un producto por ID. Devuelve True si se eliminó."""
+        prod = self._index_by_id.pop(id_, None)
+        if not prod:
+            return False
+        self._productos = [p for p in self._productos if p.id != id_]
+        return True
 
-    @id.setter
-    def id(self, value: str) -> None:
-        if not value or not isinstance(value, str):
-            raise ValueError("El ID debe ser una cadena no vacía.")
-        self._id = value.strip()
+    # --- Actualizar ---
+    def actualizar_cantidad(self, id_: str, nueva_cantidad: int) -> bool:
+        """Actualiza la cantidad de un producto por ID."""
+        prod = self._index_by_id.get(id_)
+        if not prod:
+            return False
+        prod.cantidad = nueva_cantidad
+        return True
 
-    # --- Nombre ---
-    @property
-    def nombre(self) -> str:
-        return self._nombre
+    def actualizar_precio(self, id_: str, nuevo_precio: float) -> bool:
+        """Actualiza el precio de un producto por ID."""
+        prod = self._index_by_id.get(id_)
+        if not prod:
+            return False
+        prod.precio = nuevo_precio
+        return True
 
-    @nombre.setter
-    def nombre(self, value: str) -> None:
-        if not value or not isinstance(value, str):
-            raise ValueError("El nombre debe ser una cadena no vacía.")
-        self._nombre = value.strip()
+    # --- Consultar ---
+    def buscar_por_nombre(self, termino: str) -> List[Producto]:
+        """Busca productos cuyo nombre contenga el término (no sensible a mayúsculas)."""
+        t = termino.strip().lower()
+        return [p for p in self._productos if t in p.nombre.lower()]
 
-    # --- Cantidad ---
-    @property
-    def cantidad(self) -> int:
-        return self._cantidad
+    def obtener_todos(self) -> List[Producto]:
+        """Devuelve todos los productos en el inventario."""
+        return list(self._productos)
 
-    @cantidad.setter
-    def cantidad(self, value: int) -> None:
-        # Validamos que sea un número entero mayor o igual a 0
-        if not isinstance(value, int) or value < 0:
-            raise ValueError("La cantidad debe ser un entero >= 0.")
-        self._cantidad = value
+    def obtener_por_id(self, id_: str) -> Optional[Producto]:
+        """Obtiene un producto por su ID."""
+        return self._index_by_id.get(id_)
 
-    # --- Precio ---
-    @property
-    def precio(self) -> float:
-        return self._precio
-
-    @precio.setter
-    def precio(self, value: float) -> None:
-        # Validamos que sea numérico y mayor a 0
-        try:
-            value = float(value)
-        except Exception as e:
-            raise ValueError("El precio debe ser numérico.") from e
-        if value < 0:
-            raise ValueError("El precio debe ser >= 0.")
-        # Redondeamos a 2 decimales
-        self._precio = round(value, 2)
-
-    # --- Conversión a diccionario (útil para persistencia) ---
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "id": self.id,
-            "nombre": self.nombre,
-            "cantidad": self.cantidad,
-            "precio": self.precio,
-        }
-
-    # --- Representación en consola ---
-    def __repr__(self) -> str:
-        return f"Producto(id='{self.id}', nombre='{self.nombre}', cantidad={self.cantidad}, precio={self.precio})"
