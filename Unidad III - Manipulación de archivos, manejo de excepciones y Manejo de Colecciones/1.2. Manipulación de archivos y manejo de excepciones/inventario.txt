@@ -1,0 +1,5 @@
+id;nombre;cantidad;precio
+A1;Arroz;10;1.25
+B2;Azúcar;5;1.10
+C3;Leche;12;0.95
+D4;Aceite;8;3.50
