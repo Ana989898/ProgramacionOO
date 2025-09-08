@@ -1,0 +1,62 @@
+{
+  "libros": {
+    "9780307474728": {
+      "autor": "Gabriel García Márquez",
+      "titulo": "Cien años de soledad",
+      "categoria": "Literatura",
+      "ubicacion": "Estante A1 - Nivel 2",
+      "stock": {
+        "total": 3,
+        "prestados": 1
+      }
+    },
+    "9780441478125": {
+      "autor": "Ursula K. Le Guin",
+      "titulo": "The Left Hand of Darkness",
+      "categoria": "Ciencia ficción",
+      "ubicacion": "Estante C3 - Nivel 1",
+      "stock": {
+        "total": 2,
+        "prestados": 0
+      }
+    },
+    "9780099590088": {
+      "autor": "Yuval Noah Harari",
+      "titulo": "Sapiens",
+      "categoria": "Historia",
+      "ubicacion": "Estante B2 - Nivel 4",
+      "stock": {
+        "total": 1,
+        "prestados": 1
+      }
+    }
+  },
+  "usuarios": {
+    "U001": {
+      "nombre": "Ana Villón",
+      "prestamos": [
+        "9780099590088"
+      ]
+    },
+    "U002": {
+      "nombre": "Juan Pérez",
+      "prestamos": [
+        "9780307474728"
+      ]
+    }
+  },
+  "prestamos_activos": [
+    {
+      "isbn": "9780099590088",
+      "user_id": "U001",
+      "fecha_prestamo": "2025-09-08",
+      "fecha_vencimiento": "2025-09-23"
+    },
+    {
+      "isbn": "9780307474728",
+      "user_id": "U002",
+      "fecha_prestamo": "2025-09-05",
+      "fecha_vencimiento": "2025-09-20"
+    }
+  ]
+}
